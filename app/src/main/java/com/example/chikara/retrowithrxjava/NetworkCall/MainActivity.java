@@ -1,4 +1,4 @@
-package com.example.chikara.retrowithrxjava;
+package com.example.chikara.retrowithrxjava.NetworkCall;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,15 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.example.chikara.retrowithrxjava.R;
+
+import rx.Subscription;
+
 public class MainActivity extends AppCompatActivity {
 
     TextView resultTV;
     ProgressBar progressBar;
+    Subscription subscription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
-        new RxJavaServerCommunicationClass(this).getServerResult("1",
+        subscription = new RxJavaServerCommunicationClass(this).getServerResult("1",
                 new RxJavaServerCommunicationClass.callBackListener() {
                     @Override
                     public void onSuccess(String result) {
@@ -37,5 +42,12 @@ public class MainActivity extends AppCompatActivity {
                         progressBar.setVisibility(View.GONE);
                     }
                 });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (subscription != null)
+            subscription.unsubscribe();
     }
 }

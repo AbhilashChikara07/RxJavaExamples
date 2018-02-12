@@ -1,6 +1,8 @@
-package com.example.chikara.retrowithrxjava;
+package com.example.chikara.retrowithrxjava.NetworkCall;
 
 import android.content.Context;
+
+import com.example.chikara.retrowithrxjava.R;
 
 import java.util.concurrent.TimeUnit;
 

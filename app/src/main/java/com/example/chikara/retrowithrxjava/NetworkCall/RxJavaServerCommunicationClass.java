@@ -1,4 +1,4 @@
-package com.example.chikara.retrowithrxjava;
+package com.example.chikara.retrowithrxjava.NetworkCall;
 
 import android.content.Context;
 import android.util.Log;

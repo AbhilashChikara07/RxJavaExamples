@@ -1,7 +1,6 @@
-package com.example.chikara.retrowithrxjava;
+package com.example.chikara.retrowithrxjava.NetworkCall;
 
 
-import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
