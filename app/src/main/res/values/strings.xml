@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RetroWithRxJava</string>
+    <string name="server_uri">https://swapi.co/</string>
+</resources>
